@@ -7,40 +7,76 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
+/**
+ * 
+ * @author grupo4
+ *
+ */
 @Entity
 @Table(name = "telefonos")
 public class Telefono {
 
+	/**
+	 * identificador del teléfono
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idtelefonos;
 
+	/**
+	 * número de teléfono
+	 */
 	@Column(name = "telefono", length = 45)
 	private String telefono;
 
+	/**
+	 * identificador de la persona que tiene ese número de teléfono
+	 */
 	@Column(name = "idPersona")
 	private Integer idPersona;
 
+	/**
+	 * 
+	 * @return idtelefonos
+	 */
 	public Integer getIdtelefonos() {
 		return idtelefonos;
 	}
+	/**
+	 * 
+	 * @param idTelefonos
+	 */
 
 	public void setIdtelefonos(Integer idtelefonos) {
 		this.idtelefonos = idtelefonos;
 	}
+	/**
+	 * 
+	 * @return telefono
+	 */
 
 	public String getTelefono() {
 		return telefono;
 	}
-
+	/**
+	 * 
+	 * @param telefono
+	 */
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 
+	/**
+	 * 
+	 * @return idPersona
+	 */
 	public Integer getIdPersona() {
 		return idPersona;
 	}
+	/**
+	 * 
+	 * @param idPersona
+	 */
 
 	public void setIdPersona(Integer idPersona) {
 		this.idPersona = idPersona;

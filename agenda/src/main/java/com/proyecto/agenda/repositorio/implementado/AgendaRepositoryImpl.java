@@ -11,19 +11,32 @@ import org.springframework.stereotype.Repository;
 import com.proyecto.agenda.modelo.Empleado;
 import com.proyecto.agenda.modelo.Persona;
 import com.proyecto.agenda.repositorio.base.AgendaRepository;
-
+/**
+ * 
+ * @author grupo4
+ *
+ */
 @Repository
 public class AgendaRepositoryImpl implements AgendaRepository {
 
+	/**
+	 * atributo entitiManager
+	 */
 	@PersistenceContext
 	private EntityManager em;
 
+	/**
+	 * método persistContact
+	 */
 	@Override
 	public void persistContact(Persona p) {
 		// TODO Auto-generated method stub
 		this.em.merge(p);
 	}
 
+	/**
+	 * método para coger una lista de "personas"
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public Collection<Persona> getAllPersonas() {
@@ -32,6 +45,9 @@ public class AgendaRepositoryImpl implements AgendaRepository {
 		return query.getResultList();
 	}
 
+	/**
+	 * método para coger una lista de "empleados"
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public Collection<Empleado> getAllEmpleados() {

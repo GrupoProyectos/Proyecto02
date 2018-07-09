@@ -10,75 +10,145 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-
+/**
+ * 
+ * @author grupo4
+ *
+ */
 @Entity
 @Table(name = "empleados")
 public class Empleado {
 
+	/**
+	 * atributo idempleados
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idempleados;
 
+	/**
+	 * atributo codEmpleado
+	 */
 	@NotNull
 	@Column(name = "codEmpleado", length = 45)
 	private String codEmpleado;
 
+	/**
+	 * atriuto salario
+	 */
 	@Column(name = "salario", length = 45)
 	private String salario;
 
+	/**
+	 * atributo fechaAlta
+	 */
 	@Column(name = "fechaAlta")
 	private Timestamp fechaAlta;
 
+	/**
+	 * atributo idDepartamento
+	 */
 	@Column(name = "idDepartamento")
 	private Integer idDepartamento;
 
+	/**
+	 * atributo idCategoria
+	 */
 	@Column(name = "idCategoria")
 	private Integer idCategoria;
 
+	/**
+	 * 
+	 * @return idempleados
+	 */
 	public Integer getIdempleados() {
 		return idempleados;
 	}
+	/**
+	 * 
+	 * @param idempleados
+	 */
 
 	public void setIdempleados(Integer idempleados) {
 		this.idempleados = idempleados;
 	}
 
+	/**
+	 * 
+	 * @return codEmpleado
+	 */
 	public String getCodEmpleado() {
 		return codEmpleado;
 	}
 
+	/**
+	 * 
+	 * @param codEmpleado
+	 */
 	public void setCodEmpleado(String codEmpleado) {
 		this.codEmpleado = codEmpleado;
 	}
 
+	/**
+	 * 
+	 * @return salario
+	 */
 	public String getSalario() {
 		return salario;
 	}
 
+	/**
+	 * 
+	 * @param salario
+	 */
 	public void setSalario(String salario) {
 		this.salario = salario;
 	}
 
+	/**
+	 * 
+	 * @return fechaAlta
+	 */
 	public Timestamp getFechaAlta() {
 		return fechaAlta;
 	}
 
+	/**
+	 * 
+	 * @param fechaAlta
+	 */
 	public void setFechaAlta(Timestamp fechaAlta) {
 		this.fechaAlta = fechaAlta;
 	}
 
+	/**
+	 * 
+	 * @return idDepartamento
+	 */
 	public Integer getIdDepartamento() {
 		return idDepartamento;
 	}
 
+	/**
+	 * 
+	 * @param idDepartamento
+	 */
 	public void setIdDepartamento(Integer idDepartamento) {
 		this.idDepartamento = idDepartamento;
 	}
 
+	/**
+	 * 
+	 * @return idCategoria
+	 */
 	public Integer getIdCategoria() {
 		return idCategoria;
 	}
 
+	/**
+	 * 
+	 * @param idCategoria
+	 */
 	public void setIdCategoria(Integer idCategoria) {
 		this.idCategoria = idCategoria;
 	}
