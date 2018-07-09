@@ -1,5 +1,7 @@
 package com.proyecto.agenda.servicio.implementado;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,6 +25,12 @@ public class AgendaServiceImpl implements AgendaService {
 	@Transactional
 	public void persistContact(Persona p) {
 		agendaRepositorio.persistContact(p);
+	}
+
+	@Override
+	public Collection<Persona> getAllPersonas() {
+		// TODO Auto-generated method stub
+		return agendaRepositorio.getAllPersonas();
 	}
 
 }
