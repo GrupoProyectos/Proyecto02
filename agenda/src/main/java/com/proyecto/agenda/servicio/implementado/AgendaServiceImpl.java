@@ -21,8 +21,8 @@ public class AgendaServiceImpl implements AgendaService {
 
 	@Override
 	@Transactional
-	public void saveContact(Persona p) {
-		agendaRepositorio.saveContact(p);
+	public void persistContact(Persona p) {
+		agendaRepositorio.persistContact(p);
 	}
 
 }

@@ -28,3 +28,20 @@ Se ha comenzado el proyecto, se ha realizado un esquema general de la aplicación
 Se realiza backlog y planificación del Sprint 1.
 
 Se realiza el modelo de la aplicación, creación de clases.
+
+[06/08/2018]
+
+Creando un modelo para arquitectura del proyecto a priori
+
+Creando las carpetas de modelo, control, servicio, repositorio para todo el proyecto
+
+Creando las clases que son entidades del BBDD
+
+Crear la base para el sprint 1 servicio de inserccion de registro
+
+[09/07/2018]
+
+Revision de los ficheros que han creado anteriormente, corregir los errores y mejorar los contenidos de cada entidades 
+
+Conseguir que la aplicación arranca 
+

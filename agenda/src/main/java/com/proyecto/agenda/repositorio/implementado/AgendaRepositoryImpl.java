@@ -15,7 +15,7 @@ public class AgendaRepositoryImpl implements AgendaRepository {
 	private EntityManager em;
 
 	@Override
-	public void saveContact(Persona p) {
+	public void persistContact(Persona p) {
 		// TODO Auto-generated method stub
 		this.em.merge(p);
 	}

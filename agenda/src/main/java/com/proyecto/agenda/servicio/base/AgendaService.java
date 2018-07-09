@@ -4,6 +4,6 @@ import com.proyecto.agenda.modelo.Persona;
 
 public interface AgendaService {
 
-	public void saveContact(Persona p);
+	public void persistContact(Persona p);
 
 }
