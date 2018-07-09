@@ -1,7 +1,32 @@
 package com.proyecto.agenda.repositorio.base;
 
-import com.proyecto.agenda.modelo.Persona;
+import java.util.Collection;
 
+import com.proyecto.agenda.modelo.Empleado;
+import com.proyecto.agenda.modelo.Persona;
+/**
+ * 
+ * @author grupo4
+ *
+ */
 public interface AgendaRepository {
-	public void saveContact(Persona p);
+
+	/**
+	 * 
+	 * @param p
+	 */
+	public void persistContact(Persona p);
+
+	/**
+	 * 
+	 * @return colección de "personas"
+	 */
+	public Collection<Persona> getAllPersonas();
+
+	/**
+	 * 
+	 * @return colección de "empleados"
+	 */
+	public Collection<Empleado> getAllEmpleados();
+
 }
