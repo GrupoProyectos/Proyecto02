@@ -1,7 +1,7 @@
-package com.proyecto.agenda.dao.base;
+package com.proyecto.agenda.repositorio.base;
 
 import com.proyecto.agenda.modelo.Persona;
 
-public interface AgendaDao {
+public interface AgendaRepository {
 	public void saveContact(Persona p);
 }

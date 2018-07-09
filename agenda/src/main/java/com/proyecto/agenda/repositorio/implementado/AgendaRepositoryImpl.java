@@ -1,15 +1,15 @@
-package com.proyecto.agenda.dao.implementado;
+package com.proyecto.agenda.repositorio.implementado;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 
-import com.proyecto.agenda.dao.base.AgendaDao;
 import com.proyecto.agenda.modelo.Persona;
+import com.proyecto.agenda.repositorio.base.AgendaRepository;
 
 @Repository
-public class AgendaDaoImpl implements AgendaDao {
+public class AgendaRepositoryImpl implements AgendaRepository {
 
 	@PersistenceContext
 	private EntityManager em;
