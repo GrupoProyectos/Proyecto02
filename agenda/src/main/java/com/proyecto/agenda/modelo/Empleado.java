@@ -6,10 +6,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import org.springframework.data.annotation.Id;
 
 @Entity
 @Table(name = "empleados")
@@ -20,10 +20,10 @@ public class Empleado {
 	private Integer idempleados;
 
 	@NotNull
-	@Column(name = "codEmpleado")
+	@Column(name = "codEmpleado", length = 45)
 	private String codEmpleado;
 
-	@Column(name = "salario")
+	@Column(name = "salario", length = 45)
 	private String salario;
 
 	@Column(name = "fechaAlta")

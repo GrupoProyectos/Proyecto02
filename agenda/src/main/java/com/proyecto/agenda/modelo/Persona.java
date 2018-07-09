@@ -6,10 +6,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import org.springframework.data.annotation.Id;
+
 
 @Entity
 @Table(name = "personas")
@@ -20,17 +21,17 @@ public class Persona {
 	private Integer idpersonas;
 
 	@NotNull
-	@Column(name = "nombre")
+	@Column(name = "nombre", length = 45)
 	private String nombre;
 
 	@NotNull
-	@Column(name = "apellido1")
+	@Column(name = "apellido1", length = 45)
 	private String apellido1;
 
-	@Column(name = "apellido2")
+	@Column(name = "apellido2", length = 45)
 	private String apellido2;
 
-	@Column(name = "dni")
+	@Column(name = "dni", length = 20)
 	private String dni;
 
 	@Column(name = "fechaNacimiento")

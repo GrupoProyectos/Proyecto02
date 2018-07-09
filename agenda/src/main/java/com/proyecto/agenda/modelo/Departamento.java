@@ -4,10 +4,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import org.springframework.data.annotation.Id;
+
 
 @Entity
 @Table(name = "departamentos")
@@ -18,7 +19,7 @@ public class Departamento {
 	private Integer iddepartamento;
 
 	@NotNull
-	@Column(name = "nombre")
+	@Column(name = "nombre", length = 45)
 	private String nombre;
 
 	public Integer getIddepartamento() {

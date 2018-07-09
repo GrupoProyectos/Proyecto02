@@ -4,10 +4,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import org.springframework.data.annotation.Id;
 
 @Entity
 @Table(name = "direcciones")
@@ -18,19 +18,19 @@ public class Direccion {
 	private Integer iddirecciones;
 
 	@NotNull
-	@Column(name = "direccion")
+	@Column(name = "direccion", length = 45)
 	private String direccion;
 
 	@NotNull
-	@Column(name = "codPostal")
+	@Column(name = "codPostal", length = 45)
 	private String codPostal;
 
 	@NotNull
-	@Column(name = "localidad")
+	@Column(name = "localidad", length = 45)
 	private String localidad;
 
 	@NotNull
-	@Column(name = "provincia")
+	@Column(name = "provincia", length = 45)
 	private String provincia;
 
 	@Column(name = "idPersona")

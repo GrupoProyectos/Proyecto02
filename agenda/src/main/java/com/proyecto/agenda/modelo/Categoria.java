@@ -3,25 +3,23 @@ package com.proyecto.agenda.modelo;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-
-import org.springframework.data.annotation.Id;
 
 @Entity
 @Table(name = "categorias")
 public class Categoria {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue
 	private Integer idcategorias;
 
 	@NotNull
-	@Column(name = "nombre")
+	@Column(name = "nombre", length = 45)
 	private String nombre;
 
-	@Column(name = "descripcion")
+	@Column(name = "descripcion", length = 45)
 	private String descripcion;
 
 	public int getIdcategorias() {
