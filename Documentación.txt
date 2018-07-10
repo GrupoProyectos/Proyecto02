@@ -29,19 +29,18 @@ Se realiza backlog y planificación del Sprint 1.
 
 Se realiza el modelo de la aplicación, creación de clases.
 
-[06/08/2018]
+Creando las carpetas de modelo, control, servicio, repositorio para todo el proyecto. 
 
-Creando un modelo para arquitectura del proyecto a priori
-
-Creando las carpetas de modelo, control, servicio, repositorio para todo el proyecto
-
-Creando las clases que son entidades del BBDD
-
-Crear la base para el sprint 1 servicio de inserccion de registro
+Crear la base para el sprint 1, servicio de inserccion de registros.
 
 [09/07/2018]
 
-Revision de los ficheros que han creado anteriormente, corregir los errores y mejorar los contenidos de cada entidades 
+Revision de los ficheros que se han creado anteriormente, se corrigen los errores y se mejoran los contenidos de las entidades.
 
-Conseguir que la aplicación arranca 
+Pruebas de arranque de la aplicación con el index. 
 
+[10/07/2018]
+
+Se modifica index y se crea añadir.html
+
+Se realizan pruebas JUnit para las clases.
