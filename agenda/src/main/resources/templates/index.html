@@ -3,60 +3,113 @@
 
 <head>
 
-    <meta charset="ISO-8859-1">
+<!-- <meta charset="ISO-8859-1"> -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/4.1.1/css/bootstrap.min.css}">
 
-    <title>Agenda LucaTIC Grupo4</title>
+<script th:src="@{/webjars/jquery/3.3.1/jquery.min.js}"></script>
+
+<script th:src="@{/webjars/bootstrap/4.1.1/js/bootstrap.min.js}"></script>
+
+<title>Agenda LucaTIC Grupo4</title>
 
 </head>
 
 <body>
 
-    <!-- navbar -->
-    <nav class=" align-middle navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Bienvenid@</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+	<!-- <img src="img/img principal.jpg"> -->
+	<div class="container">
+		<!-- navbar -->
+		<nav
+			class=" align-middle navbar navbar-expand-lg navbar-light bg-light">
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#"><button type="button" class="btn btn-info">Contactos</button></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="btn btn-info nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
+				<ul class="navbar-nav mr-auto">
 
-    <!-- navbar end  -->
+					<li class="nav-item m-2"><a class="navbar-brand" href="#">Bienvenid@</a>
+					</li>
+					<li class="nav-item m-2"><a class="btn btn-outline-success"
+						href="#"> Contactos </a></li>
+					<li class="nav-item m-2"><a class="btn btn-outline-primary"
+						href="#">Link</a></li>
+					<li class="nav-item dropdown m-2"><a
+						class="btn btn-outline-info dropdown-toggle" href="#"
+						id="navbarDropdown" role="button" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false"> Dropdown </a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">Action</a> <a
+								class="dropdown-item" href="#">Another action</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div></li>
+					<li class="nav-item m-2"><a class="nav-link disabled" href="#">Disabled</a>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-lg-0">
+					<input class="form-control mr-sm-2" type="search"
+						placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				</form>
+			</div>
+		</nav>
 
+		<!-- navbar end  -->
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+		<!-- jumbotron start  -->
+
+		<div class="jumbotron">
+			<h1>Jumbotron heading</h1>
+			<p class="lead">Cras justo odio, dapibus ac facilisis in, egestas
+				eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+				condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+			<p>
+				<a class="btn btn-lg btn-success" href="#" role="button">Sign up
+					today </a>
+			</p>
+		</div>
+
+		<!-- jumbotron end  -->
+
+		<div class="row marketing">
+			<div class="col-lg-6">
+				<h4>Subheading</h4>
+				<p>Donec id elit non mi porta gravida at eget metus. Maecenas
+					faucibus mollis interdum.</p>
+
+				<h4>Subheading</h4>
+				<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+					Cras mattis consectetur purus sit amet fermentum.</p>
+
+				<h4>Subheading</h4>
+				<p>Maecenas sed diam eget risus varius blandit sit amet non
+					magna.</p>
+			</div>
+
+			<div class="col-lg-6">
+				<h4>Subheading</h4>
+				<p>Donec id elit non mi porta gravida at eget metus. Maecenas
+					faucibus mollis interdum.</p>
+
+				<h4>Subheading</h4>
+				<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+					Cras mattis consectetur purus sit amet fermentum.</p>
+
+				<h4>Subheading</h4>
+				<p>Maecenas sed diam eget risus varius blandit sit amet non
+					magna.</p>
+			</div>
+		</div>
+		<!-- footer start  -->
+
+		<footer class="footer">
+			<p>© 2016 Company, Inc.</p>
+		</footer>
+
+		<!-- footer start  -->
+	</div>
+
 </body>
 
 </html>
