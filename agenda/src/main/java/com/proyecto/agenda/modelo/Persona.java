@@ -17,6 +17,7 @@ import javax.validation.constraints.NotNull;
  */
 
 @Entity
+
 @Table(name = "personas")
 public class Persona {
 

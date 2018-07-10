@@ -7,7 +7,9 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.proyecto.agenda.modelo.Categoria;
 import com.proyecto.agenda.modelo.Empleado;
 import com.proyecto.agenda.modelo.Persona;
 import com.proyecto.agenda.repositorio.base.AgendaRepository;
@@ -40,9 +42,10 @@ public class AgendaRepositoryImpl implements AgendaRepository {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
+	@Transactional
 	public Collection<Persona> getAllPersonas() {
 		// TODO Auto-generated method stub
-		Query query = this.em.createQuery("select nombre, apellido1, apellido2, dni, fechaNacimiento from personas");
+		Query query = this.em.createQuery("SELECT nombre, apellido1, apellido2, dni, fechaNacimiento FROM personas");
 		return query.getResultList();
 	}
 
@@ -55,6 +58,16 @@ public class AgendaRepositoryImpl implements AgendaRepository {
 		// TODO Auto-generated method stub
 		Query query = this.em.createQuery(
 				"select p.nombre, apellido1, apellido2, dni, fechaNacimiento, d.nombre, c.nombre, c.descripcion from personas p, empleados e, departamentos d, categorias c where p.idEmpleado = e.idempleados and e.idDepartamento = d.iddepartamento and e.idCategoria = c.idcategorias");
+		return query.getResultList();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public Collection<Categoria> getAllCategoria() {
+		// TODO Auto-generated method stub
+		Query query = this.em.getEntityManagerFactory().createEntityManager()
+				.createQuery("SELECT * FROM agenda.Categoria");
+		// Query query = this.em.createQuery("SELECT * FROM agenda.categorias");
 		return query.getResultList();
 	}
 

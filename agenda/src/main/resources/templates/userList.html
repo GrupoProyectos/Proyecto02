@@ -64,10 +64,10 @@
 
 		<div class="jumbotron">
 			<table>
-				<th:block th:each="user : ${users}">
+				<th:block th:each="category : ${categories}">
 					<tr>
-						<td th:text="${user.nombre}"></td>
-						<td th:text="${user.apellido1}"></td>
+						<td th:text="${category.nombre}"></td>
+						<td th:text="${category.descripcion}"></td>
 					</tr>
 				</th:block>
 			</table>

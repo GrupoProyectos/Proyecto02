@@ -3,6 +3,7 @@ package com.proyecto.agenda;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
@@ -11,8 +12,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  *
  */
 @SpringBootApplication
-@EntityScan("com.proyecto.agenda.modelo")
-@EnableJpaRepositories("com.proyecto.agenda.repositorio")
+@ComponentScan(basePackages = "com.proyecto.agenda")
+@EntityScan(basePackages = "com.proyecto.agenda.modelo")
+@EnableJpaRepositories(basePackages = "com.proyecto.agenda.repositorio")
 public class AgendaApplication {
 
 	/**

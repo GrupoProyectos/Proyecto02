@@ -6,9 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.proyecto.agenda.modelo.Categoria;
+import com.proyecto.agenda.modelo.Empleado;
 import com.proyecto.agenda.modelo.Persona;
 import com.proyecto.agenda.repositorio.base.AgendaRepository;
 import com.proyecto.agenda.servicio.base.AgendaService;
+
 /**
  * 
  * @author grupo4
@@ -41,6 +44,7 @@ public class AgendaServiceImpl implements AgendaService {
 	public void persistContact(Persona p) {
 		agendaRepositorio.persistContact(p);
 	}
+
 	/**
 	 * 
 	 * @return agendaRepositorio
@@ -50,6 +54,18 @@ public class AgendaServiceImpl implements AgendaService {
 	public Collection<Persona> getAllPersonas() {
 		// TODO Auto-generated method stub
 		return agendaRepositorio.getAllPersonas();
+	}
+
+	@Override
+	public Collection<Empleado> getAllEmpleados() {
+		// TODO Auto-generated method stub
+		return agendaRepositorio.getAllEmpleados();
+	}
+
+	@Override
+	public Collection<Categoria> getAllCategoria() {
+		// TODO Auto-generated method stub
+		return agendaRepositorio.getAllCategoria();
 	}
 
 }
