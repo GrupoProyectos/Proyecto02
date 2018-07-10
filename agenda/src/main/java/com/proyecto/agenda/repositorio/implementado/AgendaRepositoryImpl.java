@@ -1,6 +1,8 @@
 package com.proyecto.agenda.repositorio.implementado;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -63,11 +65,13 @@ public class AgendaRepositoryImpl implements AgendaRepository {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public Collection<Categoria> getAllCategoria() {
+	public List<Categoria> getAllCategoria() {
 		// TODO Auto-generated method stub
 		Query query = this.em.getEntityManagerFactory().createEntityManager()
-				.createQuery("SELECT * FROM agenda.Categoria");
+				.createQuery("select idcategorias, nombre, descripcion from Categoria");
 		// Query query = this.em.createQuery("SELECT * FROM agenda.categorias");
+		List<Categoria> categorias = new ArrayList<Categoria>();
+		System.out.println("++++++++++++++++++++++++++++++++++++" + query.getResultList().get(0).toString());
 		return query.getResultList();
 	}
 

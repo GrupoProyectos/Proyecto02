@@ -1,6 +1,7 @@
 package com.proyecto.agenda.servicio.implementado;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -63,7 +64,7 @@ public class AgendaServiceImpl implements AgendaService {
 	}
 
 	@Override
-	public Collection<Categoria> getAllCategoria() {
+	public List<Categoria> getAllCategoria() {
 		// TODO Auto-generated method stub
 		return agendaRepositorio.getAllCategoria();
 	}

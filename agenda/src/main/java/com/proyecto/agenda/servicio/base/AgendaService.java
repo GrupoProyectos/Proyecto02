@@ -1,6 +1,7 @@
 package com.proyecto.agenda.servicio.base;
 
 import java.util.Collection;
+import java.util.List;
 
 import com.proyecto.agenda.modelo.Categoria;
 import com.proyecto.agenda.modelo.Empleado;
@@ -27,6 +28,6 @@ public interface AgendaService {
 
 	public Collection<Empleado> getAllEmpleados();
 
-	public Collection<Categoria> getAllCategoria();
+	public List<Categoria> getAllCategoria();
 
 }
