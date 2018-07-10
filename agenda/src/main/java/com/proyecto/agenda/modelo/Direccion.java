@@ -59,6 +59,34 @@ public class Direccion {
 	private String idPersona;
 
 	/**
+	 * constructor vacío
+	 */
+	public Direccion() {
+		super();
+	}
+
+	/**
+	 * 
+	 * @param iddirecciones
+	 * @param direccion
+	 * @param codPostal
+	 * @param localidad
+	 * @param provincia
+	 * @param idPersona
+	 */
+	public Direccion(Integer iddirecciones, @NotNull String direccion, @NotNull String codPostal,
+			@NotNull String localidad, @NotNull String provincia, String idPersona) {
+		super();
+		this.iddirecciones = iddirecciones;
+		this.direccion = direccion;
+		this.codPostal = codPostal;
+		this.localidad = localidad;
+		this.provincia = provincia;
+		this.idPersona = idPersona;
+	}
+
+
+	/**
 	 * 
 	 * @return iddirecciones
 	 */

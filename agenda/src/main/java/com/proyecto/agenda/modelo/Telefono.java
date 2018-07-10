@@ -36,6 +36,25 @@ public class Telefono {
 	private Integer idPersona;
 
 	/**
+	 * constructor vacío
+	 */
+	public Telefono() {
+		super();
+	}
+	/**
+	 * 
+	 * @param idtelefonos
+	 * @param telefono
+	 * @param idPersona
+	 */
+	public Telefono(Integer idtelefonos, String telefono, Integer idPersona) {
+		super();
+		this.idtelefonos = idtelefonos;
+		this.telefono = telefono;
+		this.idPersona = idPersona;
+	}
+
+	/**
 	 * 
 	 * @return idtelefonos
 	 */

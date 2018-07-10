@@ -40,6 +40,28 @@ public class Categoria {
 	 * 
 	 * @return idcategorias
 	 */
+	
+	/**
+	 * constructor vacío
+	 */
+	public Categoria() {
+		super();
+	}
+
+	/**
+	 * 
+	 * @param idcategorias
+	 * @param nombre
+	 * @param descripcion
+	 */
+	public Categoria(Integer idcategorias, @NotNull String nombre, String descripcion) {
+		super();
+		this.idcategorias = idcategorias;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+	}
+
+
 	public int getIdcategorias() {
 		return idcategorias;
 	}

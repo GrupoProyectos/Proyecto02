@@ -33,6 +33,25 @@ public class Departamento {
 	private String nombre;
 
 	/**
+	 * constructor vacío
+	 */
+	public Departamento() {
+		super();
+	}
+
+	/**
+	 * 
+	 * @param iddepartamento
+	 * @param nombre
+	 */
+	 public Departamento(Integer iddepartamento, @NotNull String nombre) {
+		super();
+		this.iddepartamento = iddepartamento;
+		this.nombre = nombre;
+	}
+
+
+	/**
 	 * 
 	 * @return iddepartamento
 	 */

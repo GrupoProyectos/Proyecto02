@@ -58,12 +58,55 @@ public class Empleado {
 	private Integer idCategoria;
 
 	/**
+	 * constructor vacío
+	 */
+	public Empleado() {
+		super();
+	}
+
+	/**
+	 * 
+	 * @param idempleados
+	 * @param codEmpleado
+	 * @param salario
+	 * @param fechaAlta
+	 */
+	public Empleado(Integer idempleados, @NotNull String codEmpleado, String salario, Timestamp fechaAlta) {
+		super();
+		this.idempleados = idempleados;
+		this.codEmpleado = codEmpleado;
+		this.salario = salario;
+		this.fechaAlta = fechaAlta;
+	}
+
+	/**
+	 * 
+	 * @param idempleados
+	 * @param codEmpleado
+	 * @param salario
+	 * @param fechaAlta
+	 * @param idDepartamento
+	 * @param idCategoria
+	 */
+	public Empleado(Integer idempleados, @NotNull String codEmpleado, String salario, Timestamp fechaAlta,
+			Integer idDepartamento, Integer idCategoria) {
+		super();
+		this.idempleados = idempleados;
+		this.codEmpleado = codEmpleado;
+		this.salario = salario;
+		this.fechaAlta = fechaAlta;
+		this.idDepartamento = idDepartamento;
+		this.idCategoria = idCategoria;
+	}
+
+	/**
 	 * 
 	 * @return idempleados
 	 */
 	public Integer getIdempleados() {
 		return idempleados;
 	}
+
 	/**
 	 * 
 	 * @param idempleados
