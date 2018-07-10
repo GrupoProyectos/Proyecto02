@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.proyecto.agenda.modelo.Empleado;
 import com.proyecto.agenda.modelo.Persona;
 import com.proyecto.agenda.repositorio.base.AgendaRepository;
+
 /**
  * 
  * @author grupo4
@@ -41,7 +42,7 @@ public class AgendaRepositoryImpl implements AgendaRepository {
 	@Override
 	public Collection<Persona> getAllPersonas() {
 		// TODO Auto-generated method stub
-		Query query = this.em.createQuery("SELECT nombre, apellido1, apellido2, dni, fechaNacimiento FROM personas");
+		Query query = this.em.createQuery("select nombre, apellido1, apellido2, dni, fechaNacimiento from personas");
 		return query.getResultList();
 	}
 
