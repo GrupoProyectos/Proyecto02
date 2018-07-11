@@ -82,4 +82,14 @@ public class AgendaController {
 
 		return "employeeList";
 	}
+	
+	@RequestMapping("/addUser")
+	public void persistContact(Persona p){
+		
+		this.agendaService.persistContact(p);
+		
+	}
+	
+	
+	
 }
