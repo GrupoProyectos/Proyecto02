@@ -1,7 +1,5 @@
 package com.proyecto.agenda.repositorio.implementado;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -45,9 +43,10 @@ public class AgendaRepositoryImpl implements AgendaRepository {
 	@SuppressWarnings("unchecked")
 	@Override
 	@Transactional
-	public Collection<Persona> getAllPersonas() {
+	public List<Persona[]> getAllPersonas() {
 		// TODO Auto-generated method stub
-		Query query = this.em.createQuery("SELECT nombre, apellido1, apellido2, dni, fechaNacimiento FROM personas");
+		Query query = this.em
+				.createQuery("SELECT idpersonas, nombre, apellido1, apellido2, dni, fechaNacimiento FROM Persona");
 		return query.getResultList();
 	}
 
@@ -56,22 +55,21 @@ public class AgendaRepositoryImpl implements AgendaRepository {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public Collection<Empleado> getAllEmpleados() {
+	public List<Empleado[]> getAllEmpleados() {
 		// TODO Auto-generated method stub
 		Query query = this.em.createQuery(
-				"select p.nombre, apellido1, apellido2, dni, fechaNacimiento, d.nombre, c.nombre, c.descripcion from personas p, empleados e, departamentos d, categorias c where p.idEmpleado = e.idempleados and e.idDepartamento = d.iddepartamento and e.idCategoria = c.idcategorias");
+				"select p.idpersonas, p.nombre, p.apellido1, p.apellido2, p.dni, p.fechaNacimiento, d.nombre, c.nombre, c.descripcion from Persona p, Empleado e, Departamento d, Categoria c where p.idEmpleado = e.idempleados and e.idDepartamento = d.iddepartamento and e.idCategoria = c.idcategorias");
 		return query.getResultList();
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Categoria> getAllCategoria() {
+	public List<Categoria[]> getAllCategoria() {
 		// TODO Auto-generated method stub
 		Query query = this.em.getEntityManagerFactory().createEntityManager()
 				.createQuery("select idcategorias, nombre, descripcion from Categoria");
 		// Query query = this.em.createQuery("SELECT * FROM agenda.categorias");
-		List<Categoria> categorias = new ArrayList<Categoria>();
-		System.out.println("++++++++++++++++++++++++++++++++++++" + query.getResultList().get(0).toString());
+
 		return query.getResultList();
 	}
 

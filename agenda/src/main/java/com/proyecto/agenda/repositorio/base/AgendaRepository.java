@@ -1,6 +1,5 @@
 package com.proyecto.agenda.repositorio.base;
 
-import java.util.Collection;
 import java.util.List;
 
 import com.proyecto.agenda.modelo.Categoria;
@@ -24,14 +23,14 @@ public interface AgendaRepository {
 	 * 
 	 * @return colección de "personas"
 	 */
-	public Collection<Persona> getAllPersonas();
+	public List<Persona[]> getAllPersonas();
 
 	/**
 	 * 
 	 * @return colección de "empleados"
 	 */
-	public Collection<Empleado> getAllEmpleados();
+	public List<Empleado[]> getAllEmpleados();
 
-	public List<Categoria> getAllCategoria();
+	public List<Categoria[]> getAllCategoria();
 
 }

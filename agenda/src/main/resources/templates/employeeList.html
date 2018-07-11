@@ -70,15 +70,19 @@
 					<th scope="col">Apellido2</th>
 					<th scope="col">DNI</th>
 					<th scope="col">Fecha Nacimiento</th>
+					<th scope="col">Departamento</th>
+					<th scope="col">Puesto</th>
 				</tr>
-				<th:block th:each="person : ${people}">
+				<th:block th:each="employee : ${employees}">
 					<tr>
-						<td scope="row" th:text="${person[0]}"></td>
-						<td th:text="${person[1]}"></td>
-						<td th:text="${person[2]}"></td>
-						<td th:text="${person[3]}"></td>
-						<td th:text="${person[4]}"></td>
-						<td th:text="${person[5]}"></td>
+						<td scope="row" th:text="${employee[0]}"></td>
+						<td th:text="${employee[1]}"></td>
+						<td th:text="${employee[2]}"></td>
+						<td th:text="${employee[3]}"></td>
+						<td th:text="${employee[4]}"></td>
+						<td th:text="${employee[5]}"></td>
+						<td th:text="${employee[6]}"></td>
+						<td th:text="${employee[7]}"></td>
 					</tr>
 				</th:block>
 			</table>

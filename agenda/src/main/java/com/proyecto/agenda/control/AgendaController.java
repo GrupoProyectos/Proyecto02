@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.proyecto.agenda.modelo.Categoria;
+import com.proyecto.agenda.modelo.Empleado;
+import com.proyecto.agenda.modelo.Persona;
 import com.proyecto.agenda.servicio.base.AgendaService;
 
 /**
@@ -49,12 +51,35 @@ public class AgendaController {
 	public String getAllPersonas(Model model) {
 
 		// Collection<Persona> personas = agendaService.getAllPersonas();
-		List<Categoria> categorias = agendaService.getAllCategoria();
 
-		System.out.println("-----------------------" + categorias);
+		List<Persona[]> objetos = agendaService.getAllPersonas();
 
-		model.addAttribute("categories", categorias);
+		model.addAttribute("people", objetos);
 
 		return "userList";
+	}
+
+	@RequestMapping(value = "/categoryList", method = RequestMethod.GET)
+	public String getAllCategorias(Model model) {
+
+		// Collection<Persona> personas = agendaService.getAllPersonas();
+
+		List<Categoria[]> objetos = agendaService.getAllCategoria();
+
+		model.addAttribute("categories", objetos);
+
+		return "categoryList";
+	}
+
+	@RequestMapping(value = "/employeeList", method = RequestMethod.GET)
+	public String getAllEmpleados(Model model) {
+
+		// Collection<Persona> personas = agendaService.getAllPersonas();
+
+		List<Empleado[]> objetos = agendaService.getAllEmpleados();
+
+		model.addAttribute("employees", objetos);
+
+		return "employeeList";
 	}
 }

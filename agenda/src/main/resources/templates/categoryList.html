@@ -66,19 +66,14 @@
 				<tr>
 					<th scope="col">ID</th>
 					<th scope="col">Nombre</th>
-					<th scope="col">Apellido1</th>
-					<th scope="col">Apellido2</th>
-					<th scope="col">DNI</th>
-					<th scope="col">Fecha Nacimiento</th>
+					<th scope="col">Descripcion</th>
 				</tr>
-				<th:block th:each="person : ${people}">
+				<th:block th:each="category : ${categories}">
 					<tr>
-						<td scope="row" th:text="${person[0]}"></td>
-						<td th:text="${person[1]}"></td>
-						<td th:text="${person[2]}"></td>
-						<td th:text="${person[3]}"></td>
-						<td th:text="${person[4]}"></td>
-						<td th:text="${person[5]}"></td>
+						<td scope="row" th:text="${category[0]}"></td>
+						<td th:text="${category[1]}"></td>
+						<td th:text="${category[2]}"></td>
+						<!--  <td th:text="${category.descripcion}"></td> -->
 					</tr>
 				</th:block>
 			</table>
