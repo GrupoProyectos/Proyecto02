@@ -117,4 +117,14 @@ public class AgendaController {
 		mav.addObject("user", this.agendaService.findPersonaById(userId));
 		return mav;
 	}
+	
+	@RequestMapping("/addUser")
+	public void persistContact(Persona p){
+		
+		this.agendaService.persistContact(p);
+		
+	}
+	
+	
+	
 }

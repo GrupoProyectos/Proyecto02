@@ -10,12 +10,11 @@ SISTEMA DE CALIDAD.
 Se define un sistema de calidad en el que se definen unas pautas a seguir a lo largo del desarrollo del proyecto acorde a la especificación del cliente.
 
 1.- El diseño del modelo tendrá todas las clases con la primera letra mayúscula.
-2.- Los nombres de los métodos propios de nuestra aplicación estarán escritos en inglés, esto hará que sea más estándar.
+2.- Los nombres de los métodos propios de nuestra aplicación estarán escritos en inglés y en español.
 3.- Todos los nombres de los métodos comenzarán por minúscula.
 4.- El proyecto constará de tres capas: Controladores, Servicios y Repositorios.
 5.- Las capas de Servicios y Repositorios constarán de una implementación y una interfaz.
-6.- El formulario de entrada de datos de Contactos realizará una validación de la información introducida.
-7.- Las conexiones a base de datos se realizarán siempre con un usuario de permisos restringidos (SELECT, INSERT) a menos que se especifique lo contrario.
+6.- Las conexiones a base de datos se realizarán siempre con un usuario de permisos restringidos, a menos que se especifique lo contrario.
 
 
 DIARIO.
