@@ -7,8 +7,11 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.proyecto.agenda.modelo.Categoria;
+import com.proyecto.agenda.modelo.Departamento;
+import com.proyecto.agenda.modelo.Direccion;
 import com.proyecto.agenda.modelo.Empleado;
 import com.proyecto.agenda.modelo.Persona;
+import com.proyecto.agenda.modelo.Telefono;
 import com.proyecto.agenda.repositorio.base.AgendaRepository;
 import com.proyecto.agenda.servicio.base.AgendaService;
 
@@ -66,6 +69,29 @@ public class AgendaServiceImpl implements AgendaService {
 	public List<Categoria[]> getAllCategoria() {
 		// TODO Auto-generated method stub
 		return agendaRepositorio.getAllCategoria();
+	}
+
+	@Override
+	public List<Direccion[]> getAllDireccion() {
+		// TODO Auto-generated method stub
+		return agendaRepositorio.getAllDireccion();
+	}
+
+	@Override
+	public List<Departamento[]> getAllDepartamento() {
+		// TODO Auto-generated method stub
+		return agendaRepositorio.getAllDepartamento();
+	}
+
+	@Override
+	public List<Object[]> getAllTelefono() {
+		// TODO Auto-generated method stub
+		return agendaRepositorio.getAllTelefono();
+	}
+
+	@Override
+	public Object findPersonaById(int id) {
+		return agendaRepositorio.findPersonaById(id);
 	}
 
 }

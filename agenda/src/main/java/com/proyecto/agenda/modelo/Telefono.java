@@ -41,6 +41,7 @@ public class Telefono {
 	public Telefono() {
 		super();
 	}
+
 	/**
 	 * 
 	 * @param idtelefonos
@@ -61,6 +62,7 @@ public class Telefono {
 	public Integer getIdtelefonos() {
 		return idtelefonos;
 	}
+
 	/**
 	 * 
 	 * @param idTelefonos
@@ -69,6 +71,7 @@ public class Telefono {
 	public void setIdtelefonos(Integer idtelefonos) {
 		this.idtelefonos = idtelefonos;
 	}
+
 	/**
 	 * 
 	 * @return telefono
@@ -77,6 +80,7 @@ public class Telefono {
 	public String getTelefono() {
 		return telefono;
 	}
+
 	/**
 	 * 
 	 * @param telefono
@@ -92,6 +96,7 @@ public class Telefono {
 	public Integer getIdPersona() {
 		return idPersona;
 	}
+
 	/**
 	 * 
 	 * @param idPersona

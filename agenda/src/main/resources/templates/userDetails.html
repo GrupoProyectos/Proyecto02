@@ -78,23 +78,14 @@
 					<th scope="col">Fecha Nacimiento</th>
 					<th scope="col">Detalle</th>
 				</tr>
-				<th:block th:each="person : ${people}">
-					<tr>
-						<td scope="row" th:text="${person[0]}"></td>
-						<td th:text="${person[1]}"></td>
-						<td th:text="${person[2]}"></td>
-						<td th:text="${person[3]}"></td>
-						<td th:text="${person[4]}"></td>
-						<td th:text="${person[5]}"></td>
-						<td><form th:object="${person}" th:action="@{user}"
-								method="post">
-								<div class="form-actions">
-									<input type="hidden" name="personId" th:value="${person[0]}" />
-									<button type="submit">Ver Detalle</button>
-								</div>
-							</form></td>
-					</tr>
-				</th:block>
+				<tr>
+					<td scope="row" th:text="${user[0]}"></td>
+					<td th:text="${user[1]}"></td>
+					<td th:text="${user[2]}"></td>
+					<td th:text="${user[3]}"></td>
+					<td th:text="${user[4]}"></td>
+					<td th:text="${user[5]}"></td>
+				</tr>
 			</table>
 		</div>
 

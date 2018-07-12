@@ -72,27 +72,11 @@
 				<tr>
 					<th scope="col">ID</th>
 					<th scope="col">Nombre</th>
-					<th scope="col">Apellido1</th>
-					<th scope="col">Apellido2</th>
-					<th scope="col">DNI</th>
-					<th scope="col">Fecha Nacimiento</th>
-					<th scope="col">Detalle</th>
 				</tr>
-				<th:block th:each="person : ${people}">
+				<th:block th:each="departament : ${departments}">
 					<tr>
-						<td scope="row" th:text="${person[0]}"></td>
-						<td th:text="${person[1]}"></td>
-						<td th:text="${person[2]}"></td>
-						<td th:text="${person[3]}"></td>
-						<td th:text="${person[4]}"></td>
-						<td th:text="${person[5]}"></td>
-						<td><form th:object="${person}" th:action="@{user}"
-								method="post">
-								<div class="form-actions">
-									<input type="hidden" name="personId" th:value="${person[0]}" />
-									<button type="submit">Ver Detalle</button>
-								</div>
-							</form></td>
+						<td scope="row" th:text="${departament[0]}"></td>
+						<td th:text="${departament[1]}"></td>
 					</tr>
 				</th:block>
 			</table>

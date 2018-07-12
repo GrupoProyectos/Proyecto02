@@ -1,18 +1,21 @@
 package com.proyecto.agenda.control;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.proyecto.agenda.modelo.Categoria;
+import com.proyecto.agenda.modelo.Departamento;
+import com.proyecto.agenda.modelo.Direccion;
 import com.proyecto.agenda.modelo.Empleado;
 import com.proyecto.agenda.modelo.Persona;
+import com.proyecto.agenda.modelo.Telefono;
 import com.proyecto.agenda.servicio.base.AgendaService;
 
 /**
@@ -50,8 +53,6 @@ public class AgendaController {
 	@RequestMapping(value = "/userList", method = RequestMethod.GET)
 	public String getAllPersonas(Model model) {
 
-		// Collection<Persona> personas = agendaService.getAllPersonas();
-
 		List<Persona[]> objetos = agendaService.getAllPersonas();
 
 		model.addAttribute("people", objetos);
@@ -61,8 +62,6 @@ public class AgendaController {
 
 	@RequestMapping(value = "/categoryList", method = RequestMethod.GET)
 	public String getAllCategorias(Model model) {
-
-		// Collection<Persona> personas = agendaService.getAllPersonas();
 
 		List<Categoria[]> objetos = agendaService.getAllCategoria();
 
@@ -74,12 +73,48 @@ public class AgendaController {
 	@RequestMapping(value = "/employeeList", method = RequestMethod.GET)
 	public String getAllEmpleados(Model model) {
 
-		// Collection<Persona> personas = agendaService.getAllPersonas();
-
 		List<Empleado[]> objetos = agendaService.getAllEmpleados();
 
 		model.addAttribute("employees", objetos);
 
 		return "employeeList";
+	}
+
+	@RequestMapping(value = "/addressList", method = RequestMethod.GET)
+	public String getAllDireccion(Model model) {
+
+		List<Direccion[]> objetos = agendaService.getAllDireccion();
+
+		model.addAttribute("addresses", objetos);
+
+		return "addressList";
+	}
+
+	@RequestMapping(value = "/departamentList", method = RequestMethod.GET)
+	public String getAllDepartamento(Model model) {
+
+		List<Departamento[]> objetos = agendaService.getAllDepartamento();
+
+		model.addAttribute("departments", objetos);
+
+		return "departamentList";
+	}
+
+	@RequestMapping(value = "/phoneList", method = RequestMethod.GET)
+	public String getAllTelefono(Model model) {
+
+		List<Object[]> objetos = agendaService.getAllTelefono();
+
+		model.addAttribute("phones", objetos);
+		model.addAttribute("phonescount", objetos.size() - 1);
+
+		return "phoneList";
+	}
+
+	@RequestMapping(value = "/user/{userId}", method = RequestMethod.GET)
+	public ModelAndView showOwner(@PathVariable("userId") int userId) {
+		ModelAndView mav = new ModelAndView("userDetails");
+		mav.addObject("user", this.agendaService.findPersonaById(userId));
+		return mav;
 	}
 }
