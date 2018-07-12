@@ -111,20 +111,18 @@ public class AgendaController {
 		return "phoneList";
 	}
 
-	@RequestMapping(value = "/user/{userId}", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/{userId}", method = RequestMethod.POST)
 	public ModelAndView showOwner(@PathVariable("userId") int userId) {
 		ModelAndView mav = new ModelAndView("userDetails");
 		mav.addObject("user", this.agendaService.findPersonaById(userId));
 		return mav;
 	}
-	
+
 	@RequestMapping("/addUser")
-	public void persistContact(Persona p){
-		
-		this.agendaService.persistContact(p);
-		
+	public String addUser() {
+
+		return "addUser";
+
 	}
-	
-	
-	
+
 }

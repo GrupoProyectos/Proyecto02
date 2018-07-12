@@ -86,10 +86,9 @@
 						<td th:text="${person[3]}"></td>
 						<td th:text="${person[4]}"></td>
 						<td th:text="${person[5]}"></td>
-						<td><form th:object="${person}" th:action="@{user}"
-								method="post">
+						<td><form th:object="${person}"
+								th:action="@{user/} +  ${person[0]}" method="post">
 								<div class="form-actions">
-									<input type="hidden" name="personId" th:value="${person[0]}" />
 									<button type="submit">Ver Detalle</button>
 								</div>
 							</form></td>
