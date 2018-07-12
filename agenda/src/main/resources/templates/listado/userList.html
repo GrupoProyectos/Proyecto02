@@ -77,6 +77,7 @@
 					<th scope="col">DNI</th>
 					<th scope="col">Fecha Nacimiento</th>
 					<th scope="col">Detalle</th>
+					<th scope="col">Eliminar</th>
 				</tr>
 				<th:block th:each="person : ${people}">
 					<tr>
@@ -87,13 +88,10 @@
 						<td class="pt-3" th:text="${person[4]}"></td>
 						<td class="pt-3"
 							th:text="${#dates.format(person[5],'dd-MM-yyyy')}"></td>
-						<td><form th:object="${person}"
-								th:action="@{user/} +  ${person[0]}" method="post">
-								<div class="form-actions">
-									<button class="btn btn-primary" type="submit">Ver
-										Detalle</button>
-								</div>
-							</form></td>
+						<td><a class="btn btn-primary"
+							th:href="@{user/} +  ${person[0]}">Ver Detalle </a></td>
+						<td><a class="btn btn-danger"
+							th:href="@{deleteUser/} +  ${person[0]}">Eliminar </a></td>
 					</tr>
 				</th:block>
 			</table>

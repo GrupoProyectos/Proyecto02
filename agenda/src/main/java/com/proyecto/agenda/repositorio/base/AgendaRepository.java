@@ -55,4 +55,6 @@ public interface AgendaRepository {
 
 	public List<Object[]> findTelefonosByPersonId(int id) throws DataAccessException;
 
+	public void deletePersonById(int id) throws DataAccessException;
+
 }

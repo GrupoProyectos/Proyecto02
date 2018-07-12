@@ -123,4 +123,9 @@ public class AgendaServiceImpl implements AgendaService {
 		return agendaRepositorio.findTelefonosByPersonId(id);
 	}
 
+	@Override
+	public void deletePersonById(int id) {
+		agendaRepositorio.deletePersonById(id);
+	}
+
 }

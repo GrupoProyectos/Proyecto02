@@ -18,7 +18,7 @@
 
 <body>
 
-	
+
 	<div class="container">
 		<!-- navbar -->
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -72,68 +72,76 @@
 
 		<!-- navbar end  -->
 		<!-- FORMULARIO -->
-		<br/><br/>
+		<br /> <br />
 		<h1>INTRODUCE TUS DATOS PARA PODER HACER COSAS</h1>
-		<br/>
-		<br/>
-		
+		<br /> <br />
+
 		<sping:url value="/account" var="account" />
-		<form class="justify-content-center text-center align-middle" action="$(account)" method="post">
-		
-		
-			
-		
-			
+		<form class="justify-content-center text-center align-middle"
+			action="$(account)" method="post">
+
+
+
+
+
 			<div class="  input-group-prepend w-50 mb-3 ">
-			<div class=" text-center input-group-text ">
+				<div class=" text-center input-group-text ">
 					<i class="fas fa-address-book">Name</i>
-			</div>
-					
+				</div>
+
 				<input type="text" class="form-control w-50 align-middle"
-						id="inlineFormInputGroupUsername2" maxlength=45 name="nombre" >
+					id="inlineFormInputGroupUsername2" maxlength=45 name="nombre">
 			</div>
-			
-			
-			
+
+
+
 			<div class="input-group-prepend w-50 mb-3 align-middle">
-			<div class="input-group-text align-middle">
+				<div class="input-group-text align-middle">
 					<i class="fas fa-address-book align-middle">Apellido 1</i>
-			</div>
-					
+				</div>
+
 				<input type="text" class="form-control w-50 align-middle"
-						id="inlineFormInputGroupUsername2" maxlength=45 name="apellido1" >
+					id="inlineFormInputGroupUsername2" maxlength=45 name="apellido1">
 			</div>
-			
-			
-			
+
+
+
 			<div class="input-group-prepend w-50 mb-3 aling-middle">
-			<div class="input-group-text aling-middle">
+				<div class="input-group-text aling-middle">
 					<i class="fas fa-address-book aling-middle">Apellido 2</i>
-			</div>
-					
+				</div>
+
 				<input type="text" class="form-control w-50 aling-middle"
-						id="inlineFormInputGroupUsername2" maxlength=45 name="apellido2" >
+					id="inlineFormInputGroupUsername2" maxlength=45 name="apellido2">
 			</div>
-			
-			
+
+
 			<div class="input-group-prepend w-50 mb-3 align-middle">
-			<div class="input-group-text align-middle ">
+				<div class="input-group-text align-middle ">
 					<i class="fas fa-address-book">DNI</i>
-			</div>
-					
+				</div>
+
 				<input type="text" class="form-control w-50 align-middle"
-						id="inlineFormInputGroupUsername2" maxlength=45 name="apellido3" >
+					id="inlineFormInputGroupUsername2" maxlength=45 name="apellido3">
 			</div>
-			
-			
+
+			<div class="input-group-prepend w-50 mb-3 align-middle">
+				<div class="input-group-text align-middle ">
+					<i class="fas fa-address-book">Fecha Nacimiento</i>
+				</div>
+
+				<input type="text" class="form-control w-50 align-middle"
+					id="inlineFormInputGroupUsername2" maxlength=45 name="apellido3">
+			</div>
+
+
 			<div class="form-group align-middle">
-					<button type="button" class="btn btn-outline-primary">Enviar</button>
+				<button type="button" class="btn btn-outline-primary">Enviar</button>
 			</div>
 
 
-				
-					
+
+
 		</form>
-		
 </body>
 </html>

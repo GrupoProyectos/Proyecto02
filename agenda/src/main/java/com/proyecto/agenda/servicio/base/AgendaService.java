@@ -48,5 +48,7 @@ public interface AgendaService {
 	public Object findDepartamentoById(int id);
 
 	public List<Object[]> findTelefonosByPersonId(int id);
+	
+	public void deletePersonById(int id);
 
 }

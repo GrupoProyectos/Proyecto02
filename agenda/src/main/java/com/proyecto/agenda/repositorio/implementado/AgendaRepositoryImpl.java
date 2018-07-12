@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -47,8 +48,8 @@ public class AgendaRepositoryImpl implements AgendaRepository {
 	@Transactional
 	public List<Persona[]> getAllPersonas() {
 		// TODO Auto-generated method stub
-		Query query = this.em
-				.createQuery("SELECT idpersonas, nombre, apellido1, apellido2, dni, fechaNacimiento FROM Persona");
+		Query query = this.em.createQuery(
+				"SELECT idpersonas, nombre, apellido1, apellido2, dni, fechaNacimiento, idEmpleado FROM Persona");
 		this.em.close();
 		return query.getResultList();
 	}
@@ -169,6 +170,16 @@ public class AgendaRepositoryImpl implements AgendaRepository {
 		query.setParameter("id", id);
 		this.em.close();
 		return query.getResultList();
+	}
+
+	@Override
+	@Transactional
+	public void deletePersonById(int id) throws DataAccessException {
+		// TODO Auto-generated method stub
+		Query query = this.em.createQuery("DELETE FROM Persona where idpersonas =:id");
+		query.setParameter("id", id);
+		this.em.close();
+		query.executeUpdate();
 	}
 
 }

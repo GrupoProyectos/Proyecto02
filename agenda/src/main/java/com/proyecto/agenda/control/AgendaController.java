@@ -131,6 +131,18 @@ public class AgendaController {
 		return mav;
 	}
 
+	@PostMapping(value = "/deleteUser/{userId}")
+	public String deleteUserPost(@PathVariable("userId") Integer userId) {
+		agendaService.deletePersonById(userId);
+		return "redirect:../userList";
+	}
+
+	@GetMapping(value = "/deleteUser/{userId}")
+	public String deleteUserGet(@PathVariable("userId") Integer userId) {
+		agendaService.deletePersonById(userId);
+		return "redirect:../userList";
+	}
+
 	@RequestMapping("/addUser")
 	public String addUser() {
 
