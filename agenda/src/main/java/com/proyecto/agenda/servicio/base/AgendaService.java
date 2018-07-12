@@ -7,7 +7,6 @@ import com.proyecto.agenda.modelo.Departamento;
 import com.proyecto.agenda.modelo.Direccion;
 import com.proyecto.agenda.modelo.Empleado;
 import com.proyecto.agenda.modelo.Persona;
-import com.proyecto.agenda.modelo.Telefono;
 
 /**
  * 
@@ -37,7 +36,17 @@ public interface AgendaService {
 	public List<Departamento[]> getAllDepartamento();
 
 	public List<Object[]> getAllTelefono();
-	
+
 	public Object findPersonaById(int id);
+
+	public Object findEmpleadoById(int id);
+
+	public Object findCategoriaById(int id);
+
+	public Object findDireccionById(int id);
+
+	public Object findDepartamentoById(int id);
+
+	public Object findTelefonoByPersonId(int id);
 
 }

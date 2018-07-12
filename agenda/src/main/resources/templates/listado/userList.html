@@ -41,16 +41,16 @@
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false"> Listado </a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="../userList">Persona</a> <a
-								class="dropdown-item" href="../employeeList">Empleado</a>
+							<a class="dropdown-item" href="userList">Persona</a> <a
+								class="dropdown-item" href="employeeList">Empleado</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="../categoryList">Categoria</a>
+							<a class="dropdown-item" href="categoryList">Categoria</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="../addressList">Direccion</a>
+							<a class="dropdown-item" href="addressList">Direccion</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="../departamentList">Departamento</a>
+							<a class="dropdown-item" href="departamentList">Departamento</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="../phoneList">Telefono</a>
+							<a class="dropdown-item" href="phoneList">Telefono</a>
 						</div></li>
 					<li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a>
 					</li>
@@ -78,14 +78,23 @@
 					<th scope="col">Fecha Nacimiento</th>
 					<th scope="col">Detalle</th>
 				</tr>
-				<tr>
-					<td scope="row" th:text="${user[0]}"></td>
-					<td th:text="${user[1]}"></td>
-					<td th:text="${user[2]}"></td>
-					<td th:text="${user[3]}"></td>
-					<td th:text="${user[4]}"></td>
-					<td th:text="${user[5]}"></td>
-				</tr>
+				<th:block th:each="person : ${people}">
+					<tr>
+						<td class="pt-3" scope="row" th:text="${person[0]}"></td>
+						<td class="pt-3" th:text="${person[1]}"></td>
+						<td class="pt-3" th:text="${person[2]}"></td>
+						<td class="pt-3" th:text="${person[3]}"></td>
+						<td class="pt-3" th:text="${person[4]}"></td>
+						<td class="pt-3" th:text="${person[5]}"></td>
+						<td><form th:object="${person}"
+								th:action="@{user/} +  ${person[0]}" method="post">
+								<div class="form-actions">
+									<button class="btn btn-primary" type="submit">Ver
+										Detalle</button>
+								</div>
+							</form></td>
+					</tr>
+				</th:block>
 			</table>
 		</div>
 

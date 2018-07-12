@@ -41,16 +41,16 @@
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false"> Listado </a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="userList">Persona</a> <a
-								class="dropdown-item" href="employeeList">Empleado</a>
+							<a class="dropdown-item" href="../userList">Persona</a> <a
+								class="dropdown-item" href="../employeeList">Empleado</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="categoryList">Categoria</a>
+							<a class="dropdown-item" href="../categoryList">Categoria</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="addressList">Direccion</a>
+							<a class="dropdown-item" href="../addressList">Direccion</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="departamentList">Departamento</a>
+							<a class="dropdown-item" href="../departamentList">Departamento</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="phoneList">Telefono</a>
+							<a class="dropdown-item" href="../phoneList">Telefono</a>
 						</div></li>
 					<li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a>
 					</li>
@@ -78,22 +78,26 @@
 					<th scope="col">Fecha Nacimiento</th>
 					<th scope="col">Detalle</th>
 				</tr>
-				<th:block th:each="person : ${people}">
-					<tr>
-						<td scope="row" th:text="${person[0]}"></td>
-						<td th:text="${person[1]}"></td>
-						<td th:text="${person[2]}"></td>
-						<td th:text="${person[3]}"></td>
-						<td th:text="${person[4]}"></td>
-						<td th:text="${person[5]}"></td>
-						<td><form th:object="${person}"
-								th:action="@{user/} +  ${person[0]}" method="post">
-								<div class="form-actions">
-									<button type="submit">Ver Detalle</button>
-								</div>
-							</form></td>
-					</tr>
-				</th:block>
+				<tr>
+					<td scope="row" th:text="${user[0]}"></td>
+					<td th:text="${user[1]}"></td>
+					<td th:text="${user[2]}"></td>
+					<td th:text="${user[3]}"></td>
+					<td th:text="${user[4]}"></td>
+					<td th:text="${user[5]}"></td>
+				</tr>
+				<tr>
+					<td th:text="${user[6]}"></td>
+					<td th:text="${user[7]}"></td>
+					<td th:text="${user[8]}"></td>
+					<td th:text="${user[9]}"></td>
+					<td th:text="${user[10]}"></td>
+					<td th:text="${user[11]}"></td>
+					<td th:text="${user[12]}"></td>
+					<td th:text="${user[13]}"></td>
+					<td th:text="${user[14]}"></td>
+
+				</tr>
 			</table>
 		</div>
 

@@ -11,7 +11,6 @@ import com.proyecto.agenda.modelo.Departamento;
 import com.proyecto.agenda.modelo.Direccion;
 import com.proyecto.agenda.modelo.Empleado;
 import com.proyecto.agenda.modelo.Persona;
-import com.proyecto.agenda.modelo.Telefono;
 import com.proyecto.agenda.repositorio.base.AgendaRepository;
 import com.proyecto.agenda.servicio.base.AgendaService;
 
@@ -92,6 +91,36 @@ public class AgendaServiceImpl implements AgendaService {
 	@Override
 	public Object findPersonaById(int id) {
 		return agendaRepositorio.findPersonaById(id);
+	}
+
+	@Override
+	public Object findEmpleadoById(int id) {
+		// TODO Auto-generated method stub
+		return agendaRepositorio.findEmpleadoById(id);
+	}
+
+	@Override
+	public Object findCategoriaById(int id) {
+		// TODO Auto-generated method stub
+		return agendaRepositorio.findCategoriaById(id);
+	}
+
+	@Override
+	public Object findDireccionById(int id) {
+		// TODO Auto-generated method stub
+		return agendaRepositorio.findDireccionById(id);
+	}
+
+	@Override
+	public Object findDepartamentoById(int id) {
+		// TODO Auto-generated method stub
+		return agendaRepositorio.findDepartamentoById(id);
+	}
+
+	@Override
+	public Object findTelefonoByPersonId(int id) {
+		// TODO Auto-generated method stub
+		return agendaRepositorio.findTelefonoByPersonId(id);
 	}
 
 }
