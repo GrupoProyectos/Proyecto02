@@ -106,9 +106,9 @@ public class AgendaServiceImpl implements AgendaService {
 	}
 
 	@Override
-	public Object findDireccionById(int id) {
+	public List<Object[]> findDireccionesByPersonId(Integer id) {
 		// TODO Auto-generated method stub
-		return agendaRepositorio.findDireccionById(id);
+		return agendaRepositorio.findDireccionesByPersonId(id);
 	}
 
 	@Override
@@ -118,9 +118,9 @@ public class AgendaServiceImpl implements AgendaService {
 	}
 
 	@Override
-	public Object findTelefonoByPersonId(int id) {
+	public List<Object[]> findTelefonosByPersonId(int id) {
 		// TODO Auto-generated method stub
-		return agendaRepositorio.findTelefonoByPersonId(id);
+		return agendaRepositorio.findTelefonosByPersonId(id);
 	}
 
 }

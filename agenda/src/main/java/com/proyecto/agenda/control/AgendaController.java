@@ -112,9 +112,22 @@ public class AgendaController {
 	}
 
 	@PostMapping(value = "/user/{userId}")
-	public ModelAndView showUser(@PathVariable("userId") int userId) {
+	public ModelAndView showUserPost(@PathVariable("userId") Integer userId) {
 		ModelAndView mav = new ModelAndView("detalle/userDetails");
 		mav.addObject("user", this.agendaService.findPersonaById(userId));
+		mav.addObject("phones", this.agendaService.findTelefonosByPersonId(userId));
+		mav.addObject("phonescount", this.agendaService.findTelefonosByPersonId(userId).size() - 1);
+		mav.addObject("addresses", this.agendaService.findDireccionesByPersonId(userId));
+		return mav;
+	}
+
+	@GetMapping(value = "/user/{userId}")
+	public ModelAndView showUserGet(@PathVariable("userId") Integer userId) {
+		ModelAndView mav = new ModelAndView("detalle/userDetails");
+		mav.addObject("user", this.agendaService.findPersonaById(userId));
+		mav.addObject("phones", this.agendaService.findTelefonosByPersonId(userId));
+		mav.addObject("phonescount", this.agendaService.findTelefonosByPersonId(userId).size() - 1);
+		mav.addObject("addresses", this.agendaService.findDireccionesByPersonId(userId));
 		return mav;
 	}
 

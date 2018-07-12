@@ -56,7 +56,7 @@ public class Direccion {
 	 * atributo idPersona
 	 */
 	@Column(name = "idPersona")
-	private String idPersona;
+	private Integer idPersona;
 
 	/**
 	 * constructor vacío
@@ -75,7 +75,7 @@ public class Direccion {
 	 * @param idPersona
 	 */
 	public Direccion(Integer iddirecciones, @NotNull String direccion, @NotNull String codPostal,
-			@NotNull String localidad, @NotNull String provincia, String idPersona) {
+			@NotNull String localidad, @NotNull String provincia, Integer idPersona) {
 		super();
 		this.iddirecciones = iddirecciones;
 		this.direccion = direccion;
@@ -84,7 +84,6 @@ public class Direccion {
 		this.provincia = provincia;
 		this.idPersona = idPersona;
 	}
-
 
 	/**
 	 * 
@@ -170,7 +169,7 @@ public class Direccion {
 	 * 
 	 * @return idPersona
 	 */
-	public String getIdPersona() {
+	public Integer getIdPersona() {
 		return idPersona;
 	}
 
@@ -178,7 +177,7 @@ public class Direccion {
 	 * 
 	 * @param idPersona
 	 */
-	public void setIdPersona(String idPersona) {
+	public void setIdPersona(Integer idPersona) {
 		this.idPersona = idPersona;
 	}
 

@@ -85,7 +85,8 @@
 						<td class="pt-3" th:text="${person[2]}"></td>
 						<td class="pt-3" th:text="${person[3]}"></td>
 						<td class="pt-3" th:text="${person[4]}"></td>
-						<td class="pt-3" th:text="${person[5]}"></td>
+						<td class="pt-3"
+							th:text="${#dates.format(person[5],'dd-MM-yyyy')}"></td>
 						<td><form th:object="${person}"
 								th:action="@{user/} +  ${person[0]}" method="post">
 								<div class="form-actions">
