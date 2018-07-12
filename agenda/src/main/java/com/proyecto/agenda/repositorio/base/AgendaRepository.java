@@ -33,26 +33,26 @@ public interface AgendaRepository {
 	 * 
 	 * @return colección de "empleados"
 	 */
-	public List<Empleado[]> getAllEmpleados() throws DataAccessException;;
+	public List<Empleado[]> getAllEmpleados() throws DataAccessException;
 
-	public List<Categoria[]> getAllCategoria() throws DataAccessException;;
+	public List<Categoria[]> getAllCategoria() throws DataAccessException;
 
-	public List<Direccion[]> getAllDireccion() throws DataAccessException;;
+	public List<Direccion[]> getAllDireccion() throws DataAccessException;
 
-	public List<Departamento[]> getAllDepartamento() throws DataAccessException;;
+	public List<Departamento[]> getAllDepartamento() throws DataAccessException;
 
-	public List<Object[]> getAllTelefono() throws DataAccessException;;
+	public List<Object[]> getAllTelefono() throws DataAccessException;
 
-	public Object findPersonaById(int id) throws DataAccessException;;
+	public Object findPersonaById(int id) throws DataAccessException;
 
-	public Object findEmpleadoById(int id) throws DataAccessException;;
+	public Object findEmpleadoById(int id) throws DataAccessException;
 
-	public Object findCategoriaById(int id) throws DataAccessException;;
+	public Object findCategoriaById(int id) throws DataAccessException;
 
-	public Object findDireccionById(int id) throws DataAccessException;;
+	public List<Object[]> findDireccionesByPersonId(Integer id) throws DataAccessException;
 
-	public Object findDepartamentoById(int id) throws DataAccessException;;
+	public Object findDepartamentoById(int id) throws DataAccessException;
 
-	public Object findTelefonoByPersonId(int id) throws DataAccessException;;
+	public List<Object[]> findTelefonosByPersonId(int id) throws DataAccessException;
 
 }

@@ -43,10 +43,10 @@ public interface AgendaService {
 
 	public Object findCategoriaById(int id);
 
-	public Object findDireccionById(int id);
+	public List<Object[]> findDireccionesByPersonId(Integer id);
 
 	public Object findDepartamentoById(int id);
 
-	public Object findTelefonoByPersonId(int id);
+	public List<Object[]> findTelefonosByPersonId(int id);
 
 }

@@ -86,7 +86,7 @@
 						<td th:text="${employee[2]}"></td>
 						<td th:text="${employee[3]}"></td>
 						<td th:text="${employee[4]}"></td>
-						<td th:text="${employee[5]}"></td>
+						<td th:text="${#dates.format(employee[5],'dd-MM-yyyy')}"></td>
 						<td th:text="${employee[6]}"></td>
 						<td th:text="${employee[7]}"></td>
 					</tr>

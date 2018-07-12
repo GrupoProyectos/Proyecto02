@@ -49,6 +49,7 @@ public class AgendaRepositoryImpl implements AgendaRepository {
 		// TODO Auto-generated method stub
 		Query query = this.em
 				.createQuery("SELECT idpersonas, nombre, apellido1, apellido2, dni, fechaNacimiento FROM Persona");
+		this.em.close();
 		return query.getResultList();
 	}
 
@@ -62,6 +63,7 @@ public class AgendaRepositoryImpl implements AgendaRepository {
 		// TODO Auto-generated method stub
 		Query query = this.em.createQuery(
 				"select p.idpersonas, p.nombre, p.apellido1, p.apellido2, p.dni, p.fechaNacimiento, d.nombre, c.nombre, c.descripcion from Persona p, Empleado e, Departamento d, Categoria c where p.idEmpleado = e.idempleados and e.idDepartamento = d.iddepartamento and e.idCategoria = c.idcategorias");
+		this.em.close();
 		return query.getResultList();
 	}
 
@@ -71,7 +73,7 @@ public class AgendaRepositoryImpl implements AgendaRepository {
 	public List<Categoria[]> getAllCategoria() {
 		// TODO Auto-generated method stub
 		Query query = this.em.createQuery("select idcategorias, nombre, descripcion from Categoria");
-
+		this.em.close();
 		return query.getResultList();
 	}
 
@@ -82,7 +84,7 @@ public class AgendaRepositoryImpl implements AgendaRepository {
 		// TODO Auto-generated method stub
 		Query query = this.em
 				.createQuery("select iddirecciones, direccion, codPostal, localidad, provincia from Direccion");
-
+		this.em.close();
 		return query.getResultList();
 	}
 
@@ -104,13 +106,13 @@ public class AgendaRepositoryImpl implements AgendaRepository {
 
 		Query query = this.em.createQuery(
 				"select t.idtelefonos, t.telefono, p.nombre, p.apellido1, p.apellido2 from Telefono t, Persona p where t.idPersona = p.idpersonas");
-
+		this.em.close();
 		return query.getResultList();
 	}
 
 	public Object findPersonaById(int id) {
 		Query query = this.em.createQuery(
-				"select p.idpersonas, p.nombre, p.apellido1, p.apellido2, p.dni, p.fechaNacimiento, d.nombre, c.nombre, c.descripcion, dir.direccion, dir.codPostal, dir.localidad, dir.provincia, e.codEmpleado, e.salario, e.fechaAlta from Persona p, Empleado e, Departamento d, Categoria c, Direccion dir where p.idpersonas  =:id and p.idEmpleado = e.idempleados and e.idDepartamento = d.iddepartamento and e.idCategoria = c.idcategorias and dir.idPersona = p.idpersonas");
+				"select distinct p.idpersonas, p.nombre, p.apellido1, p.apellido2, p.dni, p.fechaNacimiento, d.nombre, c.nombre, c.descripcion, e.codEmpleado, e.salario, e.fechaAlta from Persona p, Empleado e, Departamento d, Categoria c, Direccion dir where p.idpersonas  =:id and p.idEmpleado = e.idempleados and e.idDepartamento = d.iddepartamento and e.idCategoria = c.idcategorias and dir.idPersona = p.idpersonas");
 		query.setParameter("id", id);
 		return query.getSingleResult();
 
@@ -123,6 +125,7 @@ public class AgendaRepositoryImpl implements AgendaRepository {
 		Query query = this.em.createQuery(
 				"SELECT p.nombre, p.apellido1, p.apellido2, e.codEmpleado, e.salario, e.fechaAlta FROM Empleado e, Persona p where e.idempleados = p.idEmpleado and idEmpleado =:id");
 		query.setParameter("id", id);
+		this.em.close();
 		return query.getSingleResult();
 	}
 
@@ -131,17 +134,19 @@ public class AgendaRepositoryImpl implements AgendaRepository {
 	public Object findCategoriaById(int id) {
 		Query query = this.em.createQuery("SELECT nombre, descripcion FROM Categoria where idcategorias =:id");
 		query.setParameter("id", id);
+		this.em.close();
 		return query.getSingleResult();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public Object findDireccionById(int id) {
+	public List<Object[]> findDireccionesByPersonId(Integer id) {
 		// TODO Auto-generated method stub
-		Query query = this.em.createQuery(
-				"SELECT direccion, codPostal, localidad, provincia FROM Direccion where iddirecciones =:id");
+		Query query = this.em
+				.createQuery("SELECT direccion, codPostal, localidad, provincia FROM Direccion where idPersona =:id");
 		query.setParameter("id", id);
-
-		return query.getSingleResult();
+		this.em.close();
+		return query.getResultList();
 	}
 
 	@Override
@@ -150,17 +155,20 @@ public class AgendaRepositoryImpl implements AgendaRepository {
 		// TODO Auto-generated method stub
 		Query query = this.em.createQuery("SELECT nombre FROM Departamento where iddepartamento =:id");
 		query.setParameter("id", id);
+		this.em.close();
 		return query.getSingleResult();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	@Transactional
-	public Object findTelefonoByPersonId(int id) {
+	public List<Object[]> findTelefonosByPersonId(int id) {
 		// TODO Auto-generated method stub
 		Query query = this.em.createQuery(
-				"SELECT nombre, apellido1, apellido2, telefono FROM Persona, Telefono where idPersona = idpersonas and idpersonas =:id");
+				"SELECT p.nombre, p.apellido1, p.apellido2, t.telefono FROM Persona p, Telefono t where idPersona = idpersonas and idpersonas =:id");
 		query.setParameter("id", id);
-		return query.getSingleResult();
+		this.em.close();
+		return query.getResultList();
 	}
 
 }
