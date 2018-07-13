@@ -59,7 +59,6 @@ public class AgendaRepositoryImpl implements AgendaRepository {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	@Transactional
 	public List<Empleado[]> getAllEmpleados() {
 		// TODO Auto-generated method stub
 		Query query = this.em.createQuery(
@@ -70,7 +69,6 @@ public class AgendaRepositoryImpl implements AgendaRepository {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	@Transactional
 	public List<Categoria[]> getAllCategoria() {
 		// TODO Auto-generated method stub
 		Query query = this.em.createQuery("select idcategorias, nombre, descripcion from Categoria");
@@ -80,7 +78,6 @@ public class AgendaRepositoryImpl implements AgendaRepository {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	@Transactional
 	public List<Direccion[]> getAllDireccion() {
 		// TODO Auto-generated method stub
 		Query query = this.em
@@ -91,7 +88,6 @@ public class AgendaRepositoryImpl implements AgendaRepository {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	@Transactional
 	public List<Departamento[]> getAllDepartamento() {
 		// TODO Auto-generated method stub
 		Query query = this.em.createQuery("select iddepartamento, nombre from Departamento");
@@ -101,7 +97,6 @@ public class AgendaRepositoryImpl implements AgendaRepository {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	@Transactional
 	public List<Object[]> getAllTelefono() {
 		// TODO Auto-generated method stub
 

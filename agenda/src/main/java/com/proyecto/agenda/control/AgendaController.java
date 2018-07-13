@@ -2,13 +2,18 @@ package com.proyecto.agenda.control;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.proyecto.agenda.modelo.Categoria;
@@ -143,11 +148,18 @@ public class AgendaController {
 		return "redirect:../userList";
 	}
 
-	@RequestMapping("/addUser")
-	public String addUser() {
-
+	@GetMapping("/addUser")
+	public String addUser(Model model) {
+		model.addAttribute("persona", new Persona());
 		return "addUser";
 
+	}
+
+	@PostMapping(value = "/saveUser")
+	public String saveUser(@Valid Persona persona, BindingResult result, SessionStatus status, Model model) {
+		this.agendaService.persistContact(persona);
+		status.setComplete();
+		return "redirect:userList";
 	}
 
 }

@@ -3,13 +3,13 @@
 
 <head>
 
-<!-- <meta charset="ISO-8859-1"> -->
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta charset="UTF-8">
 
 <link rel="stylesheet" type="text/css"
 	th:href="@{/webjars/bootstrap/4.1.1/css/bootstrap.min.css}">
 <link rel="stylesheet" type="text/css"
 	th:href="@{css/estilo_principal.css}">
+
 <script th:src="@{/webjars/jquery/3.3.1/jquery.min.js}"></script>
 
 <script th:src="@{/webjars/bootstrap/4.1.1/js/bootstrap.min.js}"></script>
@@ -19,12 +19,12 @@
 </head>
 
 <body class="colorc">
-
-	<img src="img/img principal.jpg" height="42" width="42">
 	<div class="container">
 		<!-- navbar -->
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<a class="navbar-brand" href="#">Bienvenid@</a>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-warning">
+			<a class="navbar-brand" href="#"><img
+				src="img/fondo_principal.png" alt="YO SOY TU PADRE" height="40px"
+				width="40px" /></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -53,15 +53,17 @@
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="phoneList">Telefono</a>
 						</div></li>
-					<li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a>
+
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+						role="button" data-toggle="dropdown" aria-haspopup="true"
+						aria-expanded="false"> Añadir </a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="addUser">Persona</a>
+						</div></li>
+
 					</li>
 				</ul>
-				<form class="form-inline my-2 my-lg-0">
-					<input class="form-control mr-sm-2" type="search"
-						placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-				</form>
-			</div>
 		</nav>
 
 		<!-- navbar end  -->
@@ -90,7 +92,7 @@
 		<!-- footer start  -->
 
 		<footer class="footer">
-			<p>© 2016 Company, Inc.</p>
+			<p>Â© 2016 Company, Inc.</p>
 		</footer>
 
 		<!-- footer start  -->
